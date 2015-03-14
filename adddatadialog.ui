@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddDataDialog</class>
+ <widget class="QDialog" name="AddDataDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>416</width>
+    <height>465</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="gridLayoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>410</y>
+     <width>123</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="okButtonLayout">
+    <item row="0" column="0">
+     <widget class="QPushButton" name="okSaveDataButton">
+      <property name="minimumSize">
+       <size>
+        <width>40</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>OK</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>391</width>
+     <height>401</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="addDatalLayout">
+    <item>
+     <widget class="QGroupBox" name="namesDataGroup">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>Сведения об имениннике</string>
+      </property>
+      <widget class="QLineEdit" name="lastNameField">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>113</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="firstNameField">
+       <property name="geometry">
+        <rect>
+         <x>130</x>
+         <y>20</y>
+         <width>113</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="patronimicNameField">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>20</y>
+         <width>113</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="txtDate">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>50</y>
+         <width>91</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Дата рождения:</string>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="choiceListDate">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>80</y>
+         <width>42</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="choiceListMonth">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>80</y>
+         <width>111</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="choiceListYear">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>80</y>
+         <width>81</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="emailCongratulationGroup">
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QLineEdit" name="fieldEmailSender">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>80</y>
+         <width>131</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="chooseButton">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>80</y>
+         <width>131</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Выбрать поздравление</string>
+       </property>
+      </widget>
+      <widget class="QTimeEdit" name="choiceListHoursReminder">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>80</y>
+         <width>81</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="txtReminderSender">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>361</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Вы можете поздравить именинника(-цу) по электронной почте. 
+Укажите e-mail и выберете время отправки письма имениннику(це).</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="reminderDateEmailGroup">
+      <property name="title">
+       <string>Дополнительные настройки уведомления</string>
+      </property>
+      <widget class="QComboBox" name="choiceListReminder">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>20</y>
+         <width>123</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>Новый элемент</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Новый элемент</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Новый элемент</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Новый элемент</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Новый элемент</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QComboBox" name="choiceListEmail">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>80</y>
+         <width>131</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="txtReminderDate">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>91</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Напомнить за:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="txtReminderEmail">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>50</y>
+         <width>211</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Дополнительно напомнить по e-mail
+Выберете e-mail на которые будет
+ выслано дополнительное уведомление</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

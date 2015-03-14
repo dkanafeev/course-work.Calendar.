@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingDialog</class>
+ <widget class="QDialog" name="SettingDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>412</width>
+    <height>496</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>391</width>
+     <height>441</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="tabStyle">
+    <attribute name="title">
+     <string>Стили</string>
+    </attribute>
+    <widget class="QWidget" name="verticalLayoutWidget_5">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>381</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="styleLayout">
+      <item>
+       <widget class="QGroupBox" name="choosingStyleGroup">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="title">
+         <string>Стиль окна:</string>
+        </property>
+        <widget class="QRadioButton" name="standartButton">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>101</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Стандартная</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="seasonsButton">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>40</y>
+           <width>101</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Времена года</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="usersButton">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>121</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Пользовательская</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="choosingPictureGroup">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QLabel" name="txtImageChoice">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>173</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Выбрать картинку как фон:</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="browseFileButton">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>10</y>
+           <width>60</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>60</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Обзор..</string>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="choosingColourGroup">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QLabel" name="txtClourChoice">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>173</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Выбрать цвет окон:</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="choiceListColour">
+         <property name="geometry">
+          <rect>
+           <x>120</x>
+           <y>10</y>
+           <width>100</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>100</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <item>
+          <property name="text">
+           <string>Новый элемент</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Новый элемент</string>
+          </property>
+         </item>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tabLanguage">
+    <attribute name="title">
+     <string>Языки</string>
+    </attribute>
+    <widget class="QWidget" name="horizontalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>381</width>
+       <height>411</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="languageLayout">
+      <item>
+       <widget class="QGroupBox" name="choosingLanguageGroup">
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QLabel" name="txtLanguageChoice">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>100</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>27</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Выбрать язык:</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="choiceListLanguage">
+         <property name="geometry">
+          <rect>
+           <x>90</x>
+           <y>30</y>
+           <width>111</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>170</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tabDelivery">
+    <attribute name="title">
+     <string>Рассылка</string>
+    </attribute>
+    <widget class="QWidget" name="verticalLayoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>361</width>
+       <height>401</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="deliveryLayout">
+      <item>
+       <widget class="QGroupBox" name="enterEmailPasswordGroup">
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QLineEdit" name="logField">
+         <property name="geometry">
+          <rect>
+           <x>100</x>
+           <y>70</y>
+           <width>141</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+        <widget class="QLabel" name="txtRemainderEmail">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>341</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Если Вы хотите, чтобы за определенное время вам приходило напоминание о днях рождения ваших друзей и близких на вашу электронную почту, введите, пожалуйста, свой e-mail.Вы можете выбрать из списка несколько e-mail.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QListWidget" name="emailListWidget">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>100</y>
+           <width>191</width>
+           <height>91</height>
+          </rect>
+         </property>
+         <property name="inputMethodHints">
+          <set>Qt::ImhEmailCharactersOnly</set>
+         </property>
+         <property name="selectionRectVisible">
+          <bool>true</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>hh@ya.ru</string>
+          </property>
+          <property name="checkState">
+           <enum>Checked</enum>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ggqq@ya.ru</string>
+          </property>
+          <property name="checkState">
+           <enum>Unchecked</enum>
+          </property>
+          <property name="flags">
+           <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
+          </property>
+         </item>
+        </widget>
+        <widget class="QPushButton" name="deleteSaveEmailButton">
+         <property name="geometry">
+          <rect>
+           <x>210</x>
+           <y>160</y>
+           <width>31</width>
+           <height>27</height>
+          </rect>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>27</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>DEL</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="txtAddEmail">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>70</y>
+           <width>91</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Добавить e-mail:</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="okSaveEmailButton">
+         <property name="geometry">
+          <rect>
+           <x>250</x>
+           <y>70</y>
+           <width>31</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>27</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>OK</string>
+         </property>
+        </widget>
+        <zorder>logField</zorder>
+        <zorder>txtRemainderEmail</zorder>
+        <zorder>emailListWidget</zorder>
+        <zorder>deleteSaveEmailButton</zorder>
+        <zorder>txtAddEmail</zorder>
+        <zorder>okSaveEmailButton</zorder>
+        <zorder>dayTextReminderGroup</zorder>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="dayTextReminderGroup">
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QComboBox" name="choiceListReminder">
+         <property name="geometry">
+          <rect>
+           <x>100</x>
+           <y>10</y>
+           <width>101</width>
+           <height>20</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="txtEnterTextRemainder">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>70</y>
+           <width>341</width>
+           <height>111</height>
+          </rect>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="QLabel" name="txtReminderPeriod">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>10</y>
+           <width>111</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Напомнить за:</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="txtTextRemainder">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>40</y>
+           <width>131</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Текст напоминания:</string>
+         </property>
+        </widget>
+        <zorder>choiceListReminder</zorder>
+        <zorder>txtEnterTextRemainder</zorder>
+        <zorder>txtReminderPeriod</zorder>
+        <zorder>txtTextRemainder</zorder>
+        <zorder>enterEmailPasswordGroup</zorder>
+        <zorder>enterEmailPasswordGroup</zorder>
+        <zorder>enterEmailPasswordGroup</zorder>
+        <zorder>enterEmailPasswordGroup</zorder>
+        <zorder>enterEmailPasswordGroup</zorder>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tabNotification">
+    <attribute name="title">
+     <string>Уведомление</string>
+    </attribute>
+    <widget class="QWidget" name="verticalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>361</width>
+       <height>371</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="notificationLayout">
+      <item>
+       <widget class="QGroupBox" name="notificationGroup">
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QCheckBox" name="checkAuto">
+         <property name="geometry">
+          <rect>
+           <x>280</x>
+           <y>30</y>
+           <width>69</width>
+           <height>13</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="choiceListReload">
+         <property name="geometry">
+          <rect>
+           <x>280</x>
+           <y>90</y>
+           <width>69</width>
+           <height>20</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="choiceListPeriod">
+         <property name="geometry">
+          <rect>
+           <x>280</x>
+           <y>140</y>
+           <width>71</width>
+           <height>20</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="txtAutoload">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>251</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Показывать при каждом включении компьютера</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="txtReload">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>40</y>
+           <width>251</width>
+           <height>101</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>В случае отсутствия перезагрузки в течение длительного периода показывать уведомления через каждые:</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QLabel" name="txtPeriod">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>120</y>
+           <width>251</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Выберете, пожалуйста, за сколько дней до дня рождения показывать уведомление</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>440</y>
+     <width>241</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="buttonsLayout">
+    <item row="0" column="1">
+     <widget class="QPushButton" name="cancelButton">
+      <property name="minimumSize">
+       <size>
+        <width>40</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Отмена</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QPushButton" name="okSaveSettingButton">
+      <property name="minimumSize">
+       <size>
+        <width>40</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>OK</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QPushButton" name="applyButton">
+      <property name="minimumSize">
+       <size>
+        <width>40</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Применить</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
