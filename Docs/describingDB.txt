@@ -1,0 +1,67 @@
+	Data /Информация об именинниках
+1.idData(integer)
+2.LastName /Фамилия(text)
+3.FirstName /Имя(text)
+4.PatronimicName /Отчество(text)
+5.BirthDate /День рождения(integer)
+6.BirthMonth /Месяц рождения(integer)
+7.BirthYear /Год рождения(integer)
+8.PeopleE-mail /e-mail именинника(text)
+9.E-mailTime /время отправки e-mail'а(поздравления)(integer)
+10.idCongratulationsText /id поздравления(integer)
+11.ExtraReminderTime /время напоминания(дополнительное)(integer)
+
+
+	Settings /Настройки
+1.idStyles /id Стиля(integer)
+2.idLanguages /id Языка(integer)
+3.ReminderTime /время напоминания(integer)
+4.ReminderText /текст поздравления(text)
+5.ReloadPeriod /Период перезагрузки(integer)
+6.NotificationPeriod /Период уведомлений(integer)
+
+	
+	Languages /Языки
+1.idLanguage /id Языка(integer)
+2.Language /Язык(text)
+
+	
+	Styles /Cтили
+1.idStyles /id Стиля(integer)
+2.Style /Стиль(text)
+
+
+	Files /Файлы
+1.idFiles /id файлы(integer)
+2.idStyles /id стиля(integer)
+3.ImagesЗath /путь до картинки(blob)
+
+
+	PersonalE-mail /Личная почта
+1.idPersonalE-mail /id личной почты(integer)
+2.e-mail /e-mail(text)
+
+
+	E-mailReminder /Напоминание по e-mail
+1.idE-mailReminder /id напоминания по e-mail(integer)
+2.idPersonalE-mail /id личной почты(integer)
+3.idData /id Информации об именинниках(integer)
+4.SendingTime /время отправки(колько напоминать пользователю (дни))(integer)
+
+
+	E-mailsCongratulation /Поздравление по e-mail
+1.idE-mailsCongratulation /id поздраdления по e-mail(integer)
+2.idData /id Информация об именинниках(integer)
+3.SendingTime /время отправки(integer)
+4.idThemes /id темы(integer)
+5.idCongratulationsText /id текста поздравления(integer)
+
+
+	Themes /Темы
+1.idThemes /id Темы(integer)
+2.Theme /тема(text)
+
+
+	CongratulationsText /Текст поздравления
+1.idCongratulationsText /id текста поздравления(integer)
+2.CongratulationsTtext /Текст поздравления(text)
