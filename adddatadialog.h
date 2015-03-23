@@ -3,6 +3,13 @@
 
 #include <QDialog>
 #include "textcongratulationdialog.h"
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QSqlTableModel>
+
+
+
 
 namespace Ui {
 class AddDataDialog;
@@ -19,11 +26,17 @@ public:
 private:
     Ui::AddDataDialog *ui;
     TextCongratulationDialog *chooseButton;
+    QSqlDatabase db;
+    QSqlTableModel *model;
 
 
 private slots:
 void createTextCongratulationDialog();
+void saveCloseAddDataDialog();
+void choiceListReminder(int index);
 
+void choiceListHoursReminder(const QTime &time);
+void choiceListYear();
 };
 
 

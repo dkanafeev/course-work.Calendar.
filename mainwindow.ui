@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>527</width>
-    <height>415</height>
+    <height>439</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -112,6 +112,16 @@
           <height>22</height>
          </rect>
         </property>
+        <item>
+         <property name="text">
+          <string>Дни рождения за текущий месяц</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Все дни рождения из БД</string>
+         </property>
+        </item>
        </widget>
        <widget class="QTableView" name="displayingComingHolidaysWidget">
         <property name="geometry">
@@ -126,6 +136,19 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>380</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
    </widget>
   </widget>
   <widget class="QToolBar" name="mainToolBar">

@@ -7,6 +7,9 @@
 #include "helpdialog.h"
 #include "settingdialog.h"
 #include "textcongratulationdialog.h"
+#include <QSqlDatabase>
+#include <QSqlTableModel>
+
 
 
 
@@ -31,6 +34,8 @@ private:
     HelpDialog *helpDialog;
     AddDataDialog *addHolidayButton;
     AddDataDialog *editHolidayButton;
+    QSqlDatabase db;
+    QSqlTableModel *model;
 
 
 private slots:
@@ -40,7 +45,11 @@ private slots:
     void createSettingDialog();
     void createHelpDialog();
     void createAddDataDialog();
+    void on_pushButton_clicked();
 
+
+//    void on_holidaysSelectedHolidaysWidget_activated(const QModelIndex &index);
+//    void on_choiceListHolidayDate_currentIndexChanged(const QString &arg1);
 };
 
 #endif // MAINWINDOW_H

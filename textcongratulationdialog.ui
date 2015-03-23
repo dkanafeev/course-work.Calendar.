@@ -11,18 +11,109 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Текст поздравления</string>
   </property>
-  <widget class="QWidget" name="horizontalLayoutWidget">
+  <widget class="QGroupBox" name="congratulationGroup">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>240</y>
-     <width>160</width>
-     <height>80</height>
+     <x>10</x>
+     <y>8</y>
+     <width>401</width>
+     <height>251</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="okCancelButtonLayout">
+   <property name="title">
+    <string>Шаблон текста поздравления</string>
+   </property>
+   <widget class="QTextBrowser" name="displayPattern">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>371</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="txtPattern">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>151</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Текст выбранного шаблона:</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>331</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="txtChoosePattern">
+       <property name="text">
+        <string>Выберете шаблон:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="choiceListPattern">
+       <item>
+        <property name="text">
+         <string>для коллеги</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>для друга</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>для друга 2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>для родственника</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>для родственника 2</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>270</y>
+     <width>158</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="choosePattern">
     <item>
      <widget class="QPushButton" name="okSaveCongratulationButton">
       <property name="minimumSize">
@@ -51,78 +142,10 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="verticalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>401</width>
-     <height>241</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="congratulationlLayout">
-    <item>
-     <widget class="QGroupBox" name="congratulationGroup">
-      <property name="title">
-       <string>Шаблон текста поздравления</string>
-      </property>
-      <widget class="QTextBrowser" name="displayPattern">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>70</y>
-         <width>371</width>
-         <height>161</height>
-        </rect>
-       </property>
-       <property name="html">
-        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="choiceListPattern">
-       <property name="geometry">
-        <rect>
-         <x>110</x>
-         <y>20</y>
-         <width>201</width>
-         <height>22</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLabel" name="txtChoosePattern">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>20</y>
-         <width>101</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Выберете шаблон:</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="txtPattern">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>50</y>
-         <width>151</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Текст выбранного шаблона:</string>
-       </property>
-      </widget>
-     </widget>
-    </item>
-   </layout>
-  </widget>
+  <zorder>okSaveCongratulationButton</zorder>
+  <zorder>cancelButton</zorder>
+  <zorder>congratulationGroup</zorder>
+  <zorder>cancelButton</zorder>
  </widget>
  <resources/>
  <connections/>

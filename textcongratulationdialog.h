@@ -15,6 +15,11 @@ public:
     explicit TextCongratulationDialog(QWidget *parent = 0);
     ~TextCongratulationDialog();
 
+private slots:
+    void okSaveTextCongratulation();
+
+    void cancelCloseTextCongratulation();
+
 private:
     Ui::TextCongratulationDialog *ui;
 };

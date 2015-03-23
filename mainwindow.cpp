@@ -1,17 +1,18 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QDebug>
+#include <QSqlDatabase>
+#include <QSqlError>
+#include <QMessageBox>
 
-
-/**
- * @class MainWindow
- * @brief В данном классе реализуется главное окно программы.
-*/
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("../calendarKursovaya/DB.db");
 
     //pToolBar = new ToolBar(this);
     pSettingAction = new QAction (tr("Settings"), this);
@@ -33,23 +34,21 @@ MainWindow::MainWindow(QWidget *parent) :
     ///@brief обработка нажатия на кнопки "addHolidayButton" и "editHolidayButton" и открытие окон "AddDataDialog"
     connect(this->ui->addHolidayButton, SIGNAL(clicked()), this, SLOT(createAddDataDialog()));
     connect(this->ui->editHolidayButton, SIGNAL(clicked()), this, SLOT(createAddDataDialog()));
-
-
-
-
+   connect(this->ui->pushButton, SIGNAL(clicked()), this, SLOT(on_pushButton_clicked()));
 
 }
+
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
-/*void MainWindow::dateProcessing(const QDate & date)
-{
-    qDebug() << date;
+//void MainWindow::dateProcessing(const QDate & date)
+//{
+//    qDebug() << date;
 
-}*/
+//}
 
 /**
  * @brief метод описывающий открытие окно SettingDialog
@@ -78,9 +77,32 @@ void MainWindow::createHelpDialog()
  */
 void MainWindow ::createAddDataDialog()
 {
-    if ((addHolidayButton == NULL) && (addHolidayButton == NULL))
+    if ((addHolidayButton == NULL) && (editHolidayButton == NULL))
         addHolidayButton = new AddDataDialog();
+       // editHolidayButton = new AddDataDialog();
     addHolidayButton->show();
-
 }
 
+
+
+
+//void MainWindow::on_holidaysSelectedHolidaysWidget_activated(const QModelIndex &index)
+//{
+
+//}
+
+//void MainWindow::on_choiceListHolidayDate_currentIndexChanged(const QString &arg1)
+//{
+
+//}
+
+void MainWindow::on_pushButton_clicked()
+{
+
+
+    model = new QSqlTableModel(this, db);
+    model->setTable("Data");
+    model->select();
+    ui->displayingComingHolidaysWidget->setModel(model);
+
+}

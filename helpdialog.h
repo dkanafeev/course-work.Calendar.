@@ -15,6 +15,9 @@ public:
     explicit HelpDialog(QWidget *parent = 0);
     ~HelpDialog();
 
+private slots:
+    void okCloseHelpDialogButton();
+
 private:
     Ui::HelpDialog *ui;
 };
