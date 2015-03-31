@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TextCongratulationDialog</class>
+ <widget class="QDialog" name="TextCongratulationDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>422</width>
+    <height>306</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Текст поздравления</string>
+  </property>
+  <widget class="QGroupBox" name="congratulationGroup">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>8</y>
+     <width>401</width>
+     <height>251</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Шаблон текста поздравления</string>
+   </property>
+   <widget class="QLabel" name="txtPattern">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>151</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Текст выбранного шаблона:</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>331</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="txtChoosePattern">
+       <property name="text">
+        <string>Выберете шаблон:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="choiceListPattern">
+       <item>
+        <property name="text">
+         <string>для друга</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>для родственника</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>для коллеги</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>добавить свое</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QTextEdit" name="displayPattern">
+    <property name="geometry">
+     <rect>
+      <x>13</x>
+      <y>70</y>
+      <width>371</width>
+      <height>171</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>270</y>
+     <width>158</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="choosePattern">
+    <item>
+     <widget class="QPushButton" name="okSaveCongratulationButton">
+      <property name="minimumSize">
+       <size>
+        <width>40</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>OK</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="cancelButton">
+      <property name="minimumSize">
+       <size>
+        <width>40</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Отмена</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <zorder>layoutWidget</zorder>
+  <zorder>congratulationGroup</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
