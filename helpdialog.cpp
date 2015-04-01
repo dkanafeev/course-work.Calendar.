@@ -1,11 +1,6 @@
 #include "helpdialog.h"
 #include "ui_helpdialog.h"
 
-
-
-/// В данном классе реализуется окно «Помощь»
-
-
 HelpDialog::HelpDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::HelpDialog)

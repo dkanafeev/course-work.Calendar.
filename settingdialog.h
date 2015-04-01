@@ -1,18 +1,22 @@
 #ifndef SETTINGDIALOG_H
 #define SETTINGDIALOG_H
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QSqlError>
-#include <QSqlTableModel>
+
 #include <QApplication>
 #include <QTranslator>
-#include <dbmanager.h>
-
 #include <QDialog>
+#include <QMessageBox>
+
+#include <dbmanager.h>
+#include <iostream>
 
 namespace Ui {
 class SettingDialog;
 }
+
+/**
+ * @class SettingDialog
+ * @brief В данном классе реализуется окно «Настройки», содержащее 4 вкладки: «Стили», «Языки», «Рассылка», «Уведомление»
+ */
 
 class SettingDialog : public QDialog
 {

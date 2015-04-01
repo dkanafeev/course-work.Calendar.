@@ -1,15 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <QDebug>
-#include <QSqlDatabase>
-#include <QSqlError>
-#include <QSqlQuery>
-#include <QSqlTableModel>
-#include <QMessageBox>
-#include <QApplication>
-#include <dbmanager.h>
-#include <iostream>
-
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -90,7 +80,9 @@ void MainWindow ::createAddDataDialog()
 
 void MainWindow::on_choiceListHolidayDate_activated(const int &arg1)
 {
-    ui->displayingComingHolidaysWidget->setModel(DBManager::getInstance()->getModel(arg1));
+    int mode = (arg1 == 0) ? DBManager::QUERY_SELECT_FROM_DATA_BY_BIRTH_MONTH
+                           : DBManager::QUERY_SELECT_FROM_DATA ;
+    ui->displayingComingHolidaysWidget->setModel(DBManager::getInstance()->selectQuery(mode));
 }
 
 void MainWindow::changeEvent(QEvent *apcEvt)

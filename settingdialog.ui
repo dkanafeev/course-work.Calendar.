@@ -289,7 +289,7 @@
        </item>
       </layout>
      </widget>
-     <widget class="QListWidget" name="emailListWidget">
+     <widget class="QListView" name="emailListView">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -304,25 +304,6 @@
       <property name="selectionRectVisible">
        <bool>true</bool>
       </property>
-      <item>
-       <property name="text">
-        <string>hh@ya.ru</string>
-       </property>
-       <property name="checkState">
-        <enum>Checked</enum>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>ggqq@ya.ru</string>
-       </property>
-       <property name="checkState">
-        <enum>Unchecked</enum>
-       </property>
-       <property name="flags">
-        <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
-       </property>
-      </item>
      </widget>
      <widget class="QPushButton" name="deleteSaveEmailButton">
       <property name="geometry">
@@ -400,7 +381,7 @@
      <zorder>layoutWidget</zorder>
      <zorder>txtRemainderEmail</zorder>
      <zorder>layoutWidget_5</zorder>
-     <zorder>emailListWidget</zorder>
+     <zorder>emailListView</zorder>
      <zorder>deleteSaveEmailButton</zorder>
      <zorder>txtTextRemainder</zorder>
      <zorder>txtEnterTextRemainder</zorder>

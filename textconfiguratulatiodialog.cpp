@@ -1,13 +1,5 @@
 #include "textconfiguratulatiodialog.h"
 #include "ui_textconfiguratulatiodialog.h"
-#include <QDebug>
-#include <QSqlDatabase>
-#include <QSqlError>
-#include <QMessageBox>
-
-
-///В данном классе реализуется окно «поздравление»
-
 
 TextCongratulationDialog::TextCongratulationDialog(QWidget *parent) :
     QDialog(parent),
@@ -18,8 +10,6 @@ TextCongratulationDialog::TextCongratulationDialog(QWidget *parent) :
     connect(this->ui->cancelButton ,SIGNAL(clicked()), this, SLOT(cancelCloseTextCongratulation()));
     on_openTextCongratulationDialog();
 }
-
-
 
 void TextCongratulationDialog::changeEvent(QEvent *apcEvt)
 {
@@ -56,7 +46,7 @@ void TextCongratulationDialog::on_choiceListPattern_activated(const int arg1)
 void TextCongratulationDialog::on_openTextCongratulationDialog()
 {
     // получить модель для combobox
-    ui->choiceListPattern->setModel(DBManager::getInstance()->listTextCongr());
+    ui->choiceListPattern->setModel(DBManager::getInstance()->selectQuery(DBManager::QUERY_SELECT_NAMES_FROM_CONGRATULATIONS_TEXT));
     // получить тексты
     on_choiceListPattern_activated(0);
 }

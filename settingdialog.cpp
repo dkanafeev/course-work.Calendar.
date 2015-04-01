@@ -1,17 +1,5 @@
 #include "settingdialog.h"
 #include "ui_settingdialog.h"
-#include <QSqlDatabase>
-#include <QSqlError>
-#include <QMessageBox>
-#include <QSqlQuery>
-#include <iostream>
-
-
-
-/**
- * @class SettingDialog
- * @brief В данном классе реализуется окно «Настройки», содержащее 4 вкладки: «Стили», «Языки», «Рассылка», «Уведомление»
- */
 
 SettingDialog::SettingDialog(QWidget *parent) :
     QDialog(parent),
@@ -111,18 +99,14 @@ void SettingDialog::on_tabWidget_tabBarClicked(int index)
     }
 }
 
-void SettingDialog::fillListOfEmails(){
-    ui->emailListWidget->clear();
-    QList<QString> list = DBManager::getInstance()->getListOfEmails();
-    for (int i=0; i<list.length(); i++){
-        ui->emailListWidget->addItem(list.at(i));
-        ui->emailListWidget->item(i)->setCheckState(Qt::Checked);
-    }
+void SettingDialog::fillListOfEmails()
+{
+    ui->emailListView->setModel(DBManager::getInstance()->selectQuery(DBManager::QUERY_SELECT_EMAILS_FROM_PERSONAL_EMAIL));
     getCheckedEmails();
 }
 
 void SettingDialog::getCheckedEmails(){
 
-    QList<QListWidgetItem*> list = ui->emailListWidget->selectedItems();
-    std::cout << list.size() << std::endl;
+//    QList<QListItem*> list = ui->emailListView->selectedItems();
+//    std::cout << list.size() << std::endl;
 }

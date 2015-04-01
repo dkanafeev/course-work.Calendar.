@@ -1,21 +1,23 @@
 #ifndef ADDDATADIALOG_H
 #define ADDDATADIALOG_H
 
-#include <QDialog>
-#include "textconfiguratulatiodialog.h"
-#include <QSqlDatabase>
-#include <QSqlQuery>
-#include <QSqlError>
-#include <QSqlTableModel>
 #include <dbmanager.h>
 
+#include <QDialog>
+#include <QDebug>
+#include <QMessageBox>
+#include <QDate>
 
-
+#include "textconfiguratulatiodialog.h"
 
 namespace Ui {
 class AddDataDialog;
 }
 
+/**
+ * @class AddDataDialog
+ * @brief The AddDataDialog class
+ */
 class AddDataDialog : public QDialog
 {
     Q_OBJECT
@@ -30,13 +32,12 @@ private:
 
 
 private slots:
-void createTextCongratulationDialog();
-void saveCloseAddDataDialog();
-void choiceListReminder(int index);
+    void createTextCongratulationDialog();
+    void saveCloseAddDataDialog();
+    void choiceListReminder(int index);
 
-void choiceListHoursReminder(const QTime &time);
-void choiceListYear();
-
+    void choiceListHoursReminder(const QTime &time);
+    void choiceListYear();
 };
 
 

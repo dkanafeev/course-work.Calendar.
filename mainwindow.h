@@ -3,20 +3,24 @@
 
 #include <QMainWindow>
 #include <QDebug>
+#include <QMessageBox>
+#include <QApplication>
+#include <dbmanager.h>
+#include <iostream>
+
 #include "adddatadialog.h"
 #include "helpdialog.h"
 #include "settingdialog.h"
 #include "textconfiguratulatiodialog.h"
 
-
-
-
-
-
 namespace Ui {
 class MainWindow;
 }
 
+/**
+ * @class MainWindow
+ * @brief The MainWindow class
+ */
 class MainWindow : public QMainWindow
 {
     Q_OBJECT

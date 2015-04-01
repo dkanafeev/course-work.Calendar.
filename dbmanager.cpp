@@ -1,16 +1,12 @@
 #include "dbmanager.h"
-#include <QSqlQuery>
-#include <QSqlError>
-#include <QDate>
-#include <QMessageBox>
-#include <iostream>
+
 
 DBManager* DBManager::instance = NULL;
 
 DBManager::DBManager()
 {
     db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("../Calendar/DB.db");
+    db.setDatabaseName("../course-work.Calendar/DB.db");
 }
 
 DBManager* DBManager::getInstance()
@@ -20,7 +16,7 @@ DBManager* DBManager::getInstance()
     return instance;
 }
 
-QSqlQueryModel* DBManager::getModel(int mode)
+QSqlQueryModel* DBManager::selectQuery(int mode)
 {
     db.open();
 
@@ -28,19 +24,30 @@ QSqlQueryModel* DBManager::getModel(int mode)
 
     switch (mode)
     {
-    case 0:
+    case QUERY_SELECT_FROM_DATA_BY_BIRTH_MONTH:
     {
         QDate data = QDate::currentDate();
         model->setQuery("SELECT lastName FROM Data WHERE birthMonth = " + QString::number(data.month()));
         break;
     }
-    case 1:
+    case QUERY_SELECT_FROM_DATA:
     {
         model->setQuery("SELECT lastName FROM Data ");
         break;
     }
+    case QUERY_SELECT_EMAILS_FROM_PERSONAL_EMAIL:
+    {
+        model->setQuery("SELECT email FROM PersonalEmail");
+        break;
+    }
+    case QUERY_SELECT_NAMES_FROM_CONGRATULATIONS_TEXT:
+    {
+        model->setQuery("SELECT idCongratulationsText FROM CongratulationsText ");
+        break;
+    }
     default:
     {
+        std::cout << "Error in DBManager::selectQuery: query not found! Check mode" << std::endl;
         break;
     }
     }
@@ -49,21 +56,6 @@ QSqlQueryModel* DBManager::getModel(int mode)
 
     return model;
 }
-
-
-//QSqlTableModel* DBManager::getCurrentModel()
-//{
-//    db.open();
-//    QSqlTableModel* model;
-
-//    model = new QSqlTableModel(NULL,db);
-//    model->setTable("Data");
-//    model->setFilter(QString("birthMonth=%1").arg(month));
-//    model->select();
-
-//    db.close();
-//    return model;
-//}
 
 bool DBManager::addRecordToData(QString lastName, QString firstName, QString patronimicName, QString email, QDate date, QTime hoursReminder, QDate userReminderDate, QTime userReminderTime)
 {
@@ -86,69 +78,35 @@ bool DBManager::addRecordToData(QString lastName, QString firstName, QString pat
     return execBool;
 }
 
-void DBManager::addRecordToPersonalEmail(QString email)
+void DBManager::addRecordToPersonalEmail( QString email)
 {
     db.open();
-    QSqlQuery query;
-    query.prepare("INSERT INTO PersonalEmail (email) VALUES(?)");
-    query.addBindValue(email);
-    if (query.exec())
-        std::cout << "YES" << std::endl;
+    QSqlQueryModel* model = new QSqlQueryModel();
+    const QString query = QString("INSERT INTO PersonalEmail (email) VALUES (\"" + email +"\")");
+    model->setQuery(query);
     db.close();
 }
-
-//void DBManager::addRecordToPersonalEmail( QString email)
-//{
-//    std::cout << "JHWEWJHEGW" << std::endl;
-//    db.open();
-//    QSqlQueryModel* model = new QSqlQueryModel();
-//    const QString query = QString("INSERT INTO PersonalEmail (email) VALUES ('" + email +"')");
-//    model->setQuery(query);
-//    QMessageBox::information(NULL, "title", QString(" "+ query));
-
-//    db.close();
-
-QList<QString> DBManager:: getListOfEmails (){
-    db.open();
-    QList<QString> list;
-    QSqlQuery query;
-    query.prepare("SELECT email FROM PersonalEmail");
-    query.exec();
-    while(query.next())
-    {
-       list.append(query.value("email").toString());
-    }
-
-    db.close();
-    return list;
-}
-
-
 
 QString DBManager::getTextFor(int idText)
 {
     db.open();
-    QSqlQuery query;
-    query.prepare("SELECT сongratulationsText FROM CongratulationsText "
-                  "WHERE idCongratulationsText = :id ");
-    query.bindValue(":id", idText);
-    query.exec();
-    std::cout << "Records: " << query.size() << std::endl;
-    query.first();
-    QString q = query.value(0).toString();
-    db.close();
-    return q;
-}
-///+
-QSqlQueryModel* DBManager::listTextCongr()
-{
-    db.open();
-
     QSqlQueryModel* model = new QSqlQueryModel();
-
-    model->setQuery("SELECT idCongratulationsText FROM CongratulationsText ");
-
+    model->setQuery("SELECT сongratulationsText FROM CongratulationsText "
+                    "WHERE idCongratulationsText = " + QString::number(idText));
     db.close();
-
-    return model;
+    return model->record(0).value(0).toString();
 }
+
+//QSqlTableModel* DBManager::getCurrentModel()
+//{
+//    db.open();
+//    QSqlTableModel* model;
+
+//    model = new QSqlTableModel(NULL,db);
+//    model->setTable("Data");
+//    model->setFilter(QString("birthMonth=%1").arg(month));
+//    model->select();
+
+//    db.close();
+//    return model;
+//}

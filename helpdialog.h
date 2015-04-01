@@ -7,6 +7,11 @@ namespace Ui {
 class HelpDialog;
 }
 
+/**
+ * @class HelpDialog
+ * @brief The HelpDialog class
+ * В данном классе реализуется окно «Помощь»
+ */
 class HelpDialog : public QDialog
 {
     Q_OBJECT

@@ -1,12 +1,19 @@
 #ifndef TEXTCONGRATULATIONDIALOG_H
 #define TEXTCONGRATULATIONDIALOG_H
 
+#include <QDebug>
+#include <QMessageBox>
 #include <QDialog>
 #include <dbmanager.h>
+
 namespace Ui {
 class TextCongratulationDialog;
 }
 
+/**
+ * @class TextCongratulationDialog
+ * @brief В данном классе реализуется окно «поздравление»
+ */
 class TextCongratulationDialog : public QDialog
 {
     Q_OBJECT
@@ -29,8 +36,6 @@ protected:
 
 private:
     Ui::TextCongratulationDialog *ui;
-//    QSqlDatabase db;
-//    QSqlTableModel *model;
 
 };
 

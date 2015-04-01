@@ -1,13 +1,5 @@
 #include "adddatadialog.h"
 #include "ui_adddatadialog.h"
-#include <QDebug>
-#include <QSqlDatabase>
-#include <QSqlError>
-#include <QMessageBox>
-#include <QSqlQuery>
-#include <QDate>
-
-
 
 ///В данном классе реализуется окно «добавить/редактировать данные»
 
@@ -20,7 +12,7 @@ AddDataDialog::AddDataDialog(QWidget *parent) :
 
     chooseButton = NULL;
 
-    ///@обработка нажатия на кнопку "chooseButton" и открытие окна"TextCongratulationDialog"
+    ///обработка нажатия на кнопку "chooseButton" и открытие окна"TextCongratulationDialog"
     connect(this->ui->chooseButton, SIGNAL(clicked()), this, SLOT(createTextCongratulationDialog()) );
     connect(this->ui->okSaveDataButton, SIGNAL(clicked()), this, SLOT(saveCloseAddDataDialog()));
 
@@ -59,9 +51,7 @@ void AddDataDialog::saveCloseAddDataDialog()
     ui->patronimicNameField->clear();
     ui->emailFieldSender->clear();
 
-
     close();
-//    QMessageBox::information(this, "error",QString("day %1 month %2 year %3 bool %4").arg(ui->dateEdit->date().day()).arg(ui->dateEdit->date().month()).arg(ui->dateEdit->date().year()).arg(query.exec()));
 }
 
 
